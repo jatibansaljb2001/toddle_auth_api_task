@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     # Filter App
     'django_filters',
-    'cloudinary'
+    'cloudinary',
     # API app
     'api',
 ]
@@ -152,6 +152,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #                   api_key=os.environ.get('api_key'),
 #                   api_secret=os.environ.get('api_secret'))
 
-
+CLOUDINARY_URL =os.environ.get('CLOUDINARY_URL')
 # Django Heroku Settings
 django_heroku.settings(locals())
