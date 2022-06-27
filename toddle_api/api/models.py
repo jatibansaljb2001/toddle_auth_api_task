@@ -28,7 +28,7 @@ class ClassNotes(models.Model):
 )
     classroom_id = models.ForeignKey(Classroom, related_name="classnotes_list", on_delete=models.CASCADE)
     name = models.CharField(max_length=250)
-    note = models.FileField(upload_to='note')
+    note = models.FileField(upload_to="notes")
     file_type = models.CharField(max_length=3, choices=FILE_TYPE_CHOICES)
     uploaded_by = models.ForeignKey(Teacher,related_name='teacher_notes',on_delete=models.CASCADE)
     description = models.TextField()
