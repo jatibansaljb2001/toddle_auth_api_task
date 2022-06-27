@@ -190,12 +190,12 @@ class ClassNotesList(APIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request):
-        file = request.data.get('note')
-        upload_data = cloudinary.uploader.upload(file)
+        # file = request.data.get('note')
+        # upload_data = cloudinary.uploader.upload(file)
         serializer = ClassNotesSerializer(data=request.data)
         if serializer.is_valid():
             serializer.validated_data['uploaded_by'] = request.user
-            serializer.validated_data['note'] = upload_data['secure_url']
+            # serializer.validated_data['note'] = upload_data['secure_url']
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
