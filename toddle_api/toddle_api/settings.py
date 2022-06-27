@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     # Filter App
     'django_filters',
+    'cloudinary'
     # API app
     'api',
 ]
